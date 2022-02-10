@@ -25,5 +25,20 @@ def todo_week_every_day(requests, sign_day: str):
         return HttpResponseNotFound(f'Такого дня недели, как {sign_day} не существует')
 
 
+def kiano(request):
+    context = {'year_born': 1995, 'city_born': 'Beirut', 'movie_name': 'Matriza'}
+
+    return render(request, 'week_days/kiano.html', context=context)
+
+
 def greeting(request):
     return render(request, 'week_days/greeting.html')
+
+
+def get_guinness_world_records(request):
+    context = {
+        'power_man': 'Narve Laeret',
+        'bar_name': 'Bob’s BBQ & Grill',
+        'count_needle': 1790,
+    }
+    return render(request, 'week_days/guinnessworldrecords.html', context=context)
